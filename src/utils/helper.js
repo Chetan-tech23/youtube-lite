@@ -59,3 +59,52 @@ export function generateRandomNameAndMessage() {
 
   return { name, message };
 }
+
+export function viewCountFormat(num) {
+  if (!num) return 20 + "K";
+  if (num >= 1e9) {
+    return (num / 1e9).toFixed(1) + "B";
+  } else if (num >= 1e6) {
+    return (num / 1e6).toFixed(1) + "M";
+  } else if (num >= 1e3) {
+    return (num / 1e3).toFixed(1) + "K";
+  } else {
+    return num.toString(); // For numbers less than 1,000
+  }
+}
+
+export function timeAgo(inputTimeStr) {
+  // Parse the input time string into a Date object
+  const inputTime = new Date(inputTimeStr);
+
+  // Get the current time
+  const now = new Date();
+
+  // Calculate the difference in milliseconds
+  const diffInMs = now - inputTime;
+
+  // Convert milliseconds to seconds
+  const diffInSec = Math.floor(diffInMs / 1000);
+
+  // Convert seconds to minutes, hours, days, and months
+  const diffInMin = Math.floor(diffInSec / 60);
+  const diffInHour = Math.floor(diffInMin / 60);
+  const diffInDay = Math.floor(diffInHour / 24);
+  const diffInMonth = Math.floor(diffInDay / 30); // Approximate average month length
+  const diffInYear = Math.floor(diffInMonth / 12);
+
+  // Return the appropriate time difference string
+  if (diffInYear > 0) {
+    return `${diffInYear} year${diffInYear > 1 ? "s" : ""} ago`;
+  } else if (diffInMonth > 0) {
+    return `${diffInMonth} month${diffInMonth > 1 ? "s" : ""} ago`;
+  } else if (diffInDay > 0) {
+    return `${diffInDay} day${diffInDay > 1 ? "s" : ""} ago`;
+  } else if (diffInHour > 0) {
+    return `${diffInHour} hour${diffInHour > 1 ? "s" : ""} ago`;
+  } else if (diffInMin > 0) {
+    return `${diffInMin} minute${diffInMin > 1 ? "s" : ""} ago`;
+  } else {
+    return "just now";
+  }
+}

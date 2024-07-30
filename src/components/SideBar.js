@@ -1,10 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { clearSearchText } from "../utils/redux/searchSlice";
 
 const SideBar = () => {
   const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
   const dispatch = useDispatch();
+  const location = useLocation();
 
   if (!isMenuOpen) return null;
 
@@ -13,13 +14,18 @@ const SideBar = () => {
   };
 
   return (
-    <div className="p-5 ml-2 mr-5 shadow-lg">
+    <div className="sticky top-[6rem] h-full p-5 ml-2 mr-5 shadow-lg font-bold">
       <ul>
         <li>
-          <Link to="/" onClick={handleHomeClick}>
+          <Link
+            to="/"
+            onClick={handleHomeClick}
+            className={`${location.pathname === "/" && "text-blue-700"}`}
+          >
             Home
           </Link>
         </li>
+        <li>Shorts</li>
         <li>Subscription</li>
         <li>Gaming</li>
         <li>Movies</li>
