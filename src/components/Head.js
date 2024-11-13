@@ -58,7 +58,7 @@ const Head = () => {
 
   return (
     <div className="grid grid-flow-col px-2 md:px-5 py-4 md:py-5 mx-1 mb-2 shadow-lg bg-white sticky top-0">
-      <div className="flex col-span-1">
+      <div className="flex col-span-2">
         <img
           onClick={() => toggleMenuHandler()}
           className="h-8 cursor-pointer md:block hidden"
@@ -71,7 +71,7 @@ const Head = () => {
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuE54d8krphaVP1AQ1Jd4G1uRqLcA2N81TnA&s"
         />
       </div>
-      <div className="col-span-10 ml-10 md:ml-24">
+      <div className="col-span-9 ml-3 md:ml-24">
         <div>
           <input
             className="w-2/3 md:w-1/2 border py-2 px-3 text-sm md:text-base border-gray-400 rounded-l-full"
