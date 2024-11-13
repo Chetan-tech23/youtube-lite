@@ -21,7 +21,7 @@ const WatchPage = () => {
           <iframe
             width="1200"
             height="600"
-            className="w-[24rem] md:w-[1200px] md:h-[600px] h-[300px]"
+            className="w-[23.5rem] md:w-[1200px] md:h-[600px] h-[300px]"
             src={
               "https://www.youtube.com/embed/" +
               searchParams.get("v") +
