@@ -4,7 +4,7 @@ import SideBar from "./SideBar";
 const Body = () => {
   return (
     <div className="flex">
-      <div className="hidden md:block">
+      <div className="sticky top-[6rem] h-full hidden md:block">
         <SideBar />
       </div>
       <Outlet />
