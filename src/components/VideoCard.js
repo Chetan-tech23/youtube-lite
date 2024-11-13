@@ -9,16 +9,18 @@ const VideoCard = ({ info }) => {
   const { channelTitle, title, thumbnails, publishedAt } = snippet;
 
   return (
-    <div className="p-2 m-2 w-72 shadow-lg">
+    <div className="p-2 m-2 w-[25rem] md:w-72 shadow-lg">
       <img
-        className="rounded-lg"
+        className="rounded-lg w-96"
         alt="thumbnail"
         src={thumbnails?.medium?.url}
       />
       <ul>
-        <li className="font-bold py-1 line-clamp-2 hover:block">{title}</li>
-        <li className="text-gray-500">{channelTitle} ✔</li>
-        <li className="text-gray-500">
+        <li className="text-sm md:text-lg font-bold py-1 line-clamp-2 hover:block">
+          {title}
+        </li>
+        <li className="text-gray-500 text-sm md:text-lg">{channelTitle} ✔</li>
+        <li className="text-gray-500 text-sm md:text-lg">
           {viewCountFormat(statistics?.viewCount)} views •{" "}
           {timeAgo(publishedAt)}
         </li>

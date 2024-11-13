@@ -15,12 +15,13 @@ const WatchPage = () => {
   }, []);
 
   return (
-    <div className="flex flex-col w-full">
-      <div className="px-5 flex w-full">
+    <div className="flex flex-col w-full overflow-x-hidden">
+      <div className="px-3 md:px-5 flex w-full">
         <div>
           <iframe
             width="1200"
             height="600"
+            className="w-[24rem] md:w-[1200px] md:h-[600px] h-[300px]"
             src={
               "https://www.youtube.com/embed/" +
               searchParams.get("v") +
@@ -32,7 +33,7 @@ const WatchPage = () => {
             access-control-allow-origin="true"
           ></iframe>
         </div>
-        <div className="w-full">
+        <div className="w-full md:block hidden">
           <LiveChat />
         </div>
       </div>

@@ -57,24 +57,24 @@ const Head = () => {
   };
 
   return (
-    <div className="grid grid-flow-col p-5 mx-1 mb-2 shadow-lg bg-white sticky top-0">
+    <div className="grid grid-flow-col px-2 md:px-5 py-4 md:py-5 mx-1 mb-2 shadow-lg bg-white sticky top-0">
       <div className="flex col-span-1">
         <img
           onClick={() => toggleMenuHandler()}
-          className="h-8 cursor-pointer"
+          className="h-8 cursor-pointer md:block hidden"
           alt="menu"
           src="https://cdn.iconscout.com/icon/free/png-256/free-hamburger-menu-462145.png?f=webp&w=256"
         />
         <img
-          className="h-8 ml-4"
+          className="h-8 ml-1 md:ml-4"
           alt="youtube-logo"
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuE54d8krphaVP1AQ1Jd4G1uRqLcA2N81TnA&s"
         />
       </div>
-      <div className="col-span-10 ml-24">
+      <div className="col-span-10 ml-10 md:ml-24">
         <div>
           <input
-            className="w-1/2 border py-2 px-3 border-gray-400 rounded-l-full"
+            className="w-2/3 md:w-1/2 border py-2 px-3 text-sm md:text-base border-gray-400 rounded-l-full"
             type="text"
             placeholder="Search"
             value={searchQuery}
@@ -83,14 +83,14 @@ const Head = () => {
             onBlur={() => handleOnBlur()}
           />
           <button
-            className="py-2 px-4 border border-gray-400 rounded-r-full bg-gray-200"
+            className="py-2 px-4 border border-gray-400 rounded-r-full bg-gray-200 text-sm md:text-base"
             onClick={handleSearchClick}
           >
             🔍
           </button>
         </div>
         {showSuggestion && (
-          <div className="fixed bg-white px-3 w-[36rem] rounded-lg border border-gray-200">
+          <div className="fixed bg-white px-3 w-[11rem] md:w-[36rem] text-sm md:text-lg rounded-lg border border-gray-200">
             <ul>
               {suggestion.map((s) => (
                 <li
